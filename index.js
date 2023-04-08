@@ -4,6 +4,8 @@ const url = require('url')
 
 const fs = require('fs')
 
+const PORT = process.env.PORT || 3000;
+
 http
     .createServer(function (req, res) {
         const params = url.parse(req.url, true).query
@@ -76,4 +78,4 @@ http
             })
         }
     })
-    .listen(3000, () => console.log('Listening on port 3000'))
+    .listen(PORT, () => console.log('Server running'))
