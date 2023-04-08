@@ -1,0 +1,9 @@
+{
+  "name": "node-crud-fs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:jfoyarzo/node-crud-fs.git",
+  "author": "jfoyarzo <foyarzo621@gmail.com>",
+  "license": "MIT",
+  "private": false
+}
