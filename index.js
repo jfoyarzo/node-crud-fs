@@ -1,14 +1,11 @@
-//Modulos requeridos
 const http = require('http')
 
 const url = require('url')
 
 const fs = require('fs')
 
-//Creacion servidor
 http
     .createServer(function (req, res) {
-        // se definen variables con la query y la fecha, ademas del template para el contenido del archivo
         const params = url.parse(req.url, true).query
         const archivo = params.file
         const nombre = params.name
@@ -22,7 +19,6 @@ http
         ${contenido}`
 
 
-        // los if para las diferentes rutas
         if (req.url.includes('/crear')) {
             fs.writeFile(archivo, template, (err) => {
                 if (err == null) {
@@ -66,7 +62,6 @@ http
             fs.unlink(archivo, (err, data) => {
                 if (err == null) {
                     res.write(`Deleting file ${archivo}, refer to the console for more info`)
-                    //funcion con setTimeout para enviar el mensaje por consola después de 3 segundos
                     setTimeout(() => {
 
                         console.log(`File ${archivo} deleted successfully`)
